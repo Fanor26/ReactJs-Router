@@ -1,10 +1,11 @@
 import React from "react";
+import { AppRoutes } from "./components/AppRoutes";
 
 function App() {
   return (
-    <div>
-      <h1> ReactJs Routes</h1>
-    </div>
+    <>
+      <AppRoutes />
+    </>
   );
 }
 
