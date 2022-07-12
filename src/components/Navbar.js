@@ -1,54 +1,19 @@
-import React from "react";
+import userEvent from "@testing-library/user-event";
+import React, { useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { UserContext } from "../hooks/useContext";
 export const Navbar = () => {
+  const {user} = useContext(UserContext);
   return (
-    <nav className="navbar">
+    <nav>
+      <h1>
+        Tittle {user.username}
+      </h1>
       <div>
-        {/*
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/login">Login</Link>
-
-        <NavLink to="/" activeClassName="active">
-          Home
-        </NavLink>
-        <NavLink to="/about" activeClassName="active">
-          About
-        </NavLink>
-        <NavLink to="/login" activeClassName="active">
-          Login
-        </NavLink>*/}
-        <NavLink
-          to="/"
-          exact
-          activeStyle={{
-            fontWeight: "bold",
-            color: "blue",
-          }}
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/about"
-          exact
-          activeStyle={{
-            fontWeight: "bold",
-            color: "blue",
-          }}
-        >
-          About
-        </NavLink>
-
-        <NavLink
-          to="/login"
-          exact
-          activeStyle={{
-            fontWeight: "bold",
-            color: "blue",
-          }}
-        >
-          Login
-        </NavLink>
+        
+        <NavLink exact to="/">Home</NavLink>
+        <NavLink exact to="/about"> About</NavLink>
+        <NavLink exact to="/login">Login</NavLink>
       </div>
     </nav>
   );
